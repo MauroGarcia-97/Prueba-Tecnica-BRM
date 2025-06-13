@@ -4,13 +4,13 @@ require('dotenv').config();
 require('./config/db');
 
 const userRoutes = require('./routes/userRoutes');
-
+const messages = require('./constants/messages'); 
 app.use(express.json());
 
 app.use('/users', userRoutes);
 
 app.get('/', (req, res) => {
-  res.send('API de gestión de usuarios lista 🚀');
+  res.send(messages.apiReady); 
 });
 
 module.exports = app;
